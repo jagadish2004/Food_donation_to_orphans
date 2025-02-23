@@ -1,0 +1,91 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation to Orphans</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Food Donation Platform for Orphans</h1>
+    </header>
+    
+    <section class="intro">
+        <p>Your generous food donations can make a difference in the lives of children in orphanages.</p>
+        <a href="donation-form.html" class="donate-btn">Donate Now</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Food Donation Project | All rights reserved.</p>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Food to Orphans</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Donate Food to Orphans</h1>
+    </header>
+    
+    <section class="donation-form">
+        <h2>Make a Donation</h2>
+        <form id="donation-form" action="process-donation.php" method="POST">
+            <label for="donor-name">Your Name</label>
+            <input type="text" id="donor-name" name="donor_name" required>
+
+            <label for="donor-email">Your Email</label>
+            <input type="email" id="donor-email" name="donor_email" required>
+
+            <label for="donation-amount">Amount of Food (kg)</label>
+            <input type="number" id="donation-amount" name="donation_amount" min="1" required>
+
+            <button type="submit">Donate</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Food Donation Project | All rights reserved.</p>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Donation</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Donation!</h1>
+    </header>
+    
+    <section class="thank-you">
+        <p>Your donation of <span id="donation-amount"></span> kg of food will make a huge difference to the children in orphanages.</p>
+        <p>We appreciate your generosity!</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Food Donation Project | All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the donation amount from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const donationAmount = urlParams.get('donation_amount');
+        document.getElementById('donation-amount').innerText = donationAmount + " kg";
+    </script>
+</body>
+</html>
